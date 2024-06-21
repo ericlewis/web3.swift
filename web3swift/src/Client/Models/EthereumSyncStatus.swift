@@ -3,7 +3,7 @@
 //  Copyright © 2022 Argent Labs Limited. All rights reserved.
 //
 
-public struct EthereumSyncStatus: Codable {
+public struct EthereumSyncStatus: Codable, Sendable {
     public let result: ResultUnion
 
     enum CodingKeys: String, CodingKey {
@@ -15,7 +15,7 @@ public struct EthereumSyncStatus: Codable {
     }
 }
 
-public enum ResultUnion: Codable {
+public enum ResultUnion: Codable, Sendable {
     case bool(Bool)
     case resultClass(ResultClass)
 
@@ -43,8 +43,8 @@ public enum ResultUnion: Codable {
     }
 }
 
-public struct ResultClass: Codable {
-    public struct Status: Codable {
+public struct ResultClass: Codable, Sendable {
+    public struct Status: Codable, Sendable {
         public let startingBlock: Int
         public let currentBlock: Int
         public let highestBlock: Int

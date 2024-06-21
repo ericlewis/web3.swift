@@ -3,10 +3,10 @@
 //  Copyright © 2022 Argent Labs Limited. All rights reserved.
 //
 
-import BigInt
+@preconcurrency import BigInt
 import Foundation
 
-public struct EthereumBlockInfo: Equatable {
+public struct EthereumBlockInfo: Equatable, Sendable {
     public var number: EthereumBlock
     public var timestamp: Date
     public var transactions: [String]

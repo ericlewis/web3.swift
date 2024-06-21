@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum EthereumBlock: Hashable {
+public enum EthereumBlock: Hashable, Sendable {
     case Latest
     case Earliest
     case Pending

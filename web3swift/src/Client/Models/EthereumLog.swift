@@ -3,10 +3,10 @@
 //  Copyright © 2022 Argent Labs Limited. All rights reserved.
 //
 
-import BigInt
+@preconcurrency import BigInt
 import Foundation
 
-public struct EthereumLog: Equatable {
+public struct EthereumLog: Equatable, Sendable {
     public let logIndex: BigUInt?
     public let transactionIndex: BigUInt?
     public let transactionHash: String?

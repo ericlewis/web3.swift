@@ -5,7 +5,7 @@
 
 import Foundation
 
-public struct EthereumHeader: Codable {
+public struct EthereumHeader: Codable, Sendable {
     public let parentHash: String
     public let sha3Uncles: String
     public let miner: String

@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum EthereumNetwork: Equatable, Decodable {
+public enum EthereumNetwork: Equatable, Decodable, Sendable {
     case mainnet
     case sepolia
     case custom(String)

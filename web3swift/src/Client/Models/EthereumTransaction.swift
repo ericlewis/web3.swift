@@ -3,7 +3,7 @@
 //  Copyright © 2022 Argent Labs Limited. All rights reserved.
 //
 
-import BigInt
+@preconcurrency import BigInt
 import Foundation
 
 public protocol EthereumTransactionProtocol {
@@ -15,7 +15,7 @@ public protocol EthereumTransactionProtocol {
     var hash: Data? { get }
 }
 
-public struct EthereumTransaction: EthereumTransactionProtocol, Equatable, Codable {
+public struct EthereumTransaction: EthereumTransactionProtocol, Equatable, Codable, Sendable {
     public let from: EthereumAddress?
     public let to: EthereumAddress
     public let value: BigUInt?
