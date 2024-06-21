@@ -30,7 +30,7 @@ extension ZKSyncClientProtocol {
             transaction.chainId = network.intValue
         }
 
-        guard let signedTx = try? account.sign(zkTransaction: transaction),
+        guard let signedTx = try? await account.sign(zkTransaction: transaction),
               let transactionHex = signedTx.raw?.web3.hexString else {
             throw EthereumClientError.encodeIssue
         }

@@ -9,14 +9,14 @@ import Foundation
 public protocol EthereumAccountProtocol {
     var address: EthereumAddress { get }
 
-    func sign(data: Data) throws -> Data
-    func sign(hash: String) throws -> Data
-    func sign(hex: String) throws -> Data
-    func sign(message: Data) throws -> Data
-    func sign(message: String) throws -> Data
-    func signMessage(message: Data) throws -> String
-    func signMessage(message: TypedData) throws -> String
-    func sign(transaction: EthereumTransaction) throws -> SignedTransaction
+    func sign(data: Data) async throws -> Data
+    func sign(hash: String) async throws -> Data
+    func sign(hex: String) async throws -> Data
+    func sign(message: Data) async throws -> Data
+    func sign(message: String) async throws -> Data
+    func signMessage(message: Data) async throws -> String
+    func signMessage(message: TypedData) async throws -> String
+    func sign(transaction: EthereumTransaction) async throws -> SignedTransaction
 }
 
 public enum EthereumAccountError: Error {

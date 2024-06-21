@@ -183,7 +183,7 @@ extension EthereumRPCProtocol {
                 transaction.chainId = network.intValue
             }
 
-            guard let _ = transaction.chainId, let signedTx = (try? account.sign(transaction: transaction)), let transactionHex = signedTx.raw?.web3.hexString else {
+            guard let _ = transaction.chainId, let signedTx = (try? await account.sign(transaction: transaction)), let transactionHex = signedTx.raw?.web3.hexString else {
                 throw EthereumClientError.encodeIssue
             }
 

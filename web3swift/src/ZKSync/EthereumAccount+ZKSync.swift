@@ -7,9 +7,9 @@ import web3
 import Foundation
 
 extension EthereumAccountProtocol {
-    func sign(zkTransaction: ZKSyncTransaction) throws -> ZKSyncSignedTransaction {
+    func sign(zkTransaction: ZKSyncTransaction) async throws -> ZKSyncSignedTransaction {
         let typed = zkTransaction.eip712Representation
-        let signature = try signMessage(message: typed).web3.hexData!
+        let signature = try await signMessage(message: typed).web3.hexData!
 
         return .init(
             transaction: zkTransaction,
