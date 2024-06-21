@@ -160,7 +160,7 @@ public struct EthereumTransaction: EthereumTransactionProtocol, Equatable, Codab
     }
 }
 
-public struct SignedTransaction {
+public struct SignedTransaction: Sendable {
     public let transaction: EthereumTransaction
     public let signature: Signature
 
